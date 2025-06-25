@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>La Constitution Française - Quiz Interactif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,6 +81,43 @@
         }
         #reset:hover {
             background-color: #002244;
+        }
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+                font-size: 1em;
+            }
+            h1 {
+                font-size: 1.2em;
+                padding: 0 2px;
+            }
+            .options {
+                flex-direction: column;
+                gap: 6px;
+                width: 100%;
+            }
+            .option {
+                font-size: 1em;
+                padding: 8px 6px;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: left;
+            }
+            #reset {
+                width: 100%;
+                font-size: 1em;
+                padding: 12px 0;
+            }
+            #score {
+                font-size: 1em;
+            }
+            .section {
+                margin-top: 10px;
+            }
+            p {
+                margin-bottom: 14px;
+            }
         }
     </style>
 </head>
