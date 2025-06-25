@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+	
+	<title>Interaktives Quiz</title>
+	
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #003366;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .question {
+            display: inline;
+            background-color: #f0f8ff;
+            padding: 0 2px;
+        }
+        .options {
+            display: inline-flex;
+            gap: 10px;
+            margin: 0 5px;
+        }
+        .option {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            background-color: #e9e9e9;
+        }
+        .correct {
+            background-color: #dff0d8 !important;
+            border-color: #d6e9c6 !important;
+            color: #3c763d !important;
+        }
+        .incorrect {
+            background-color: #f2dede !important;
+            border-color: #ebccd1 !important;
+            color: #a94442 !important;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .answered {
+            pointer-events: none;
+        }
+        #score {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #003366;
+        }
+        #reset {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #reset:hover {
+            background-color: #002244;
+        }
+    </style>         
+   </head>
+   
+   
+   
+   
+<body>
+    <div id="quizContainer">
+        <div class="question">
+            La DDHC ______ des dispositions
+            <div class="answer">
+                <button onclick="checkAnswer(this, false)">contenait</button>
+                <button onclick="checkAnswer(this, true)">contient</button>
+                <button onclick="checkAnswer(this, false)">a contenu</button>
+                <button onclick="checkAnswer(this, false)">contint</button>
+            </div>
+        </div>
+        <div class="question">
+            qui ______.
+            <div class="answer">
+                <button onclick="checkAnswer(this, false)">ont concerné</button>
+                <button onclick="checkAnswer(this, true)">concernent</button>
+                <button onclick="checkAnswer(this, false)">concernaient</button>
+                <button onclick="checkAnswer(this, false)">concernèrent</button>
+            </div>
+        </div>
+        <div class="question">
+            Le texte ______ deux grands principes d’organisation politique: la souveraineté nationale et la séparation des pouvoirs.
+            <div class="answer">
+                <button onclick="checkAnswer(this, false)">a mis</button>               
+                <button onclick="checkAnswer(this, false)">posait</button>
+                <button onclick="checkAnswer(this, false)">met</button>
+				 <button onclick="checkAnswer(this, true)">pose</button>
+            </div>
+        </div>
+        <div class="question">
+		La ______ d'une constitution          
+            <div class="answer">
+                <button onclick="checkAnswer(this, false)">démande</button>	
+                <button onclick="checkAnswer(this, false)">mise en place</button>
+                <button onclick="checkAnswer(this, false)">recherche</button>
+                <button onclick="checkAnswer(this, true)">demande</button>
+            </div>
+        </div>
+        <div class="question">
+            Le pouvoir ______ arrêter le pouvoir.
+            <div class="answer">
+                <button onclick="checkAnswer(this, false)">devrait</button>
+                <button onclick="checkAnswer(this, false)">a dû</button>
+                <button onclick="checkAnswer(this, true)">doit</button>
+                <button onclick="checkAnswer(this, false)">devait</button>
+            </div>
+        </div>
+        <!-- Weitere Fragen hier hinzufügen -->
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect) {
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+    </script>
+</body>
+</html>

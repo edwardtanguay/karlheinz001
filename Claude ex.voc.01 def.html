@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>La Constitution Française - Quiz Interactif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #003366;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .question {
+            display: inline;
+            background-color: #f0f8ff;
+            padding: 0 2px;
+        }
+        .options {
+            display: inline-flex;
+            gap: 10px;
+            margin: 0 5px;
+        }
+        .option {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            background-color: #e9e9e9;
+        }
+        .correct {
+            background-color: #dff0d8 !important;
+            border-color: #d6e9c6 !important;
+            color: #3c763d !important;
+        }
+        .incorrect {
+            background-color: #f2dede !important;
+            border-color: #ebccd1 !important;
+            color: #a94442 !important;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .answered {
+            pointer-events: none;
+        }
+        #score {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #003366;
+        }
+        #reset {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #reset:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>La Constitution Française et la Déclaration des Droits de l'Homme et du Citoyen</h1>
+
+    <p>
+        L'année 1789 marque le début de l'histoire constitutionnelle française parce qu'une Assemblée constituante 
+        <span class="question" id="q1">
+            <span class="options">
+                <span class="option" data-correct="true">a commencé à élaborer</span>
+                <span class="option" data-correct="false">a aménagé</span>
+                <span class="option" data-correct="false">a préparé</span>
+                <span class="option" data-correct="false">a noté</span>
+            </span>
+        </span>
+        une constitution pour la France. Le 26 août 1789, la Constituante 
+        <span class="question" id="q2">
+            <span class="options">
+                <span class="option" data-correct="false">adoptait</span>
+                <span class="option" data-correct="true">a adopté</span>
+                <span class="option" data-correct="false">avait adopté</span>
+                <span class="option" data-correct="false">a choisi</span>
+            </span>
+        </span>
+        les dix-sept articles de la Déclaration des droits de l'homme et du citoyen. Cette dernière 
+        <span class="question" id="q3">
+            <span class="options">
+                <span class="option" data-correct="false">est conçue</span>
+                <span class="option" data-correct="true">a été conçue</span>
+                <span class="option" data-correct="false">avait conçue</span>
+                <span class="option" data-correct="false">a été conçu</span>
+            </span>
+        </span>
+        afin de servir 
+        <span class="question" id="q4">
+            <span class="options">
+                <span class="option" data-correct="false">de dispositif</span>
+                <span class="option" data-correct="true">de préambule</span>
+                <span class="option" data-correct="false">de début</span>
+                <span class="option" data-correct="false">d'introduction</span>
+            </span>
+        </span>
+        à la première constitution française.
+    </p>
+
+    <p>
+        La DDHC 
+        <span class="question" id="q5">
+            <span class="options">
+                <span class="option" data-correct="false">contenait</span>
+                <span class="option" data-correct="true">contient</span>
+                <span class="option" data-correct="false">a contenu</span>
+                <span class="option" data-correct="false">contint</span>
+            </span>
+        </span>
+        un préambule et des dispositions concernant l'organisation de l'Etat. Le texte 
+        <span class="question" id="q7">
+            <span class="options">
+                <span class="option" data-correct="false">a mis</span>
+                <span class="option" data-correct="false">posait</span>
+                <span class="option" data-correct="true">pose</span>
+                <span class="option" data-correct="false">met</span>
+            </span>
+        </span>
+        deux grands principes d'organisation politique: la souveraineté nationale et la séparation des pouvoirs.
+    </p>
+
+    <div class="section">
+        <p>La DDHC fait apparaître trois aspirations essentielles pour l'histoire des institutions politiques:</p>
+        
+        <p>
+            1. La 
+            <span class="question" id="q8">
+                <span class="options">
+                    <span class="option" data-correct="false">mise en place</span>
+                    <span class="option" data-correct="true">demande</span>
+                    <span class="option" data-correct="false">recherche</span>
+                    <span class="option" data-correct="false">démande</span>
+                </span>
+            </span>
+            d'une constitution:<br>
+            Pour qu'il y ait une constitution, la séparation des pouvoirs est indispensable : le pouvoir 
+            <span class="question" id="q9">
+                <span class="options">
+                    <span class="option" data-correct="false">devrait</span>
+                    <span class="option" data-correct="true">doit</span>
+                    <span class="option" data-correct="false">a dû</span>
+                    <span class="option" data-correct="false">devait</span>
+                </span>
+            </span>
+            arrêter le pouvoir.
+        </p>
+        
+        <p>
+            2. L'encadrement de l'autorité:<br>
+            Le grand texte relatif à la question de la souveraineté est le Contrat Social (1762). Chaque individu 
+            <span class="question" id="q10">
+                <span class="options">
+                    <span class="option" data-correct="false">mettra</span>
+                    <span class="option" data-correct="true">met</span>
+                    <span class="option" data-correct="false">a mis</span>
+                    <span class="option" data-correct="false">avait mis</span>
+                </span>
+            </span>
+            en commun sa personne et toute sa puissance sous la suprême direction 
+            <span class="question" id="q11">
+                <span class="options">
+                    <span class="option" data-correct="false">du chef de l'Etat</span>
+                    <span class="option" data-correct="true">de la volonté générale</span>
+                    <span class="option" data-correct="false">du Tiers Etat</span>
+                    <span class="option" data-correct="false">du peuple</span>
+                </span>
+            </span>
+            . L'Etat doit être dirigé par la volonté générale et non par la volonté d'un seul. Désormais, la souveraineté 
+            <span class="question" id="q12">
+                <span class="options">
+                    <span class="option" data-correct="false">a été détenue</span>
+                    <span class="option" data-correct="true">est détenue</span>
+                    <span class="option" data-correct="false">avait été détenue</span>
+                    <span class="option" data-correct="false">est détenu</span>
+                </span>
+            </span>
+            par la nation.
+        </p>
+        
+        <p>
+            3. L' 
+            <span class="question" id="q13">
+                <span class="options">
+                    <span class="option" data-correct="false">abolition</span>
+                    <span class="option" data-correct="true">établissement</span>
+                    <span class="option" data-correct="false">application</span>
+                    <span class="option" data-correct="false">attention</span>
+                </span>
+            </span>
+            de la loi:<br>
+            La volonté générale 
+            <span class="question" id="q14">
+                <span class="options">
+                    <span class="option" data-correct="false">s'est exprimée</span>
+                    <span class="option" data-correct="true">s`exprime</span>
+                    <span class="option" data-correct="false">s'exprimera</span>
+                    <span class="option" data-correct="false">s'exprimait</span>
+                </span>
+            </span>
+            dans la loi, c'est-à-dire dans un texte qui lui-même est 
+            <span class="question" id="q15">
+                <span class="options">
+                    <span class="option" data-correct="false">compréhensible</span>
+                    <span class="option" data-correct="true">général</span>
+                    <span class="option" data-correct="false">logique</span>
+                    <span class="option" data-correct="false">strict</span>
+                </span>
+            </span>
+            et 
+            <span class="question" id="q16">
+                <span class="options">
+                    <span class="option" data-correct="false">concret</span>
+                    <span class="option" data-correct="true">abstrait</span>
+                    <span class="option" data-correct="false">clair</span>
+                    <span class="option" data-correct="false">exhaustif</span>
+                </span>
+            </span>
+            et qui doit s'appliquer à tout le monde. La loi est le texte juridique fondamental dans la pensée des révolutionnaires. C'est elle qui est au coeur de la Déclaration des droits de l'homme et du citoyen.
+        </p>
+    </div>
+
+    <p>
+        Les idées de Jean-Jacques Rousseau 
+        <span class="question" id="q17">
+            <span class="options">
+                <span class="option" data-correct="false">vont impressionner</span>
+                <span class="option" data-correct="true">ont inspiré</span>
+                <span class="option" data-correct="false">ont choqué</span>
+                <span class="option" data-correct="false">avaient inspiré</span>
+            </span>
+        </span>
+        toute l'histoire constitutionnelle française au moins jusqu'en 1958. C'est en raison de celles-ci que la France a développé une conception absolue de la loi. La loi a quasiment été un mythe, absolument intouchable en France jusqu'en 1958. D'après le Contrat Social, elle 
+        <span class="question" id="q18">
+            <span class="options">
+                <span class="option" data-correct="false">venait</span>
+                <span class="option" data-correct="true">vient</span>
+                <span class="option" data-correct="false">est venue</span>
+                <span class="option" data-correct="false">viendra</span>
+            </span>
+        </span>
+        directement du peuple. La loi 
+        <span class="question" id="q19">
+            <span class="options">
+                <span class="option" data-correct="false">a exprimé</span>
+                <span class="option" data-correct="true">exprime</span>
+                <span class="option" data-correct="false">exprimera</span>
+                <span class="option" data-correct="false">a appliqué</span>
+            </span>
+        </span>
+        la volonté générale. Les différentes 
+        <span class="question" id="q20">
+            <span class="options">
+                <span class="option" data-correct="false">dispositions</span>
+                <span class="option" data-correct="true">constitutions</span>
+                <span class="option" data-correct="false">lois</span>
+                <span class="option" data-correct="false">directives</span>
+            </span>
+        </span>
+        ont été avant tout préoccupées par l'organisation du pouvoir 
+        <span class="question" id="q21">
+            <span class="options">
+                <span class="option" data-correct="true">législatif</span>
+                <span class="option" data-correct="false">exécutif</span>
+                <span class="option" data-correct="false">judiciaire</span>
+                <span class="option" data-correct="false">de l'opposition</span>
+            </span>
+        </span>
+        . Cependant, les révolutionnaires devaient résoudre un problème pratique: Comment exprimer la volonté générale, dans un Etat comme la France qui à l'époque compte plusieurs millions de citoyens, ? Ils 
+        <span class="question" id="q22">
+            <span class="options">
+                <span class="option" data-correct="false">avaient adopté</span>
+                <span class="option" data-correct="true">ont adopté</span>
+                <span class="option" data-correct="false">adoptaient</span>
+                <span class="option" data-correct="false">adopteront</span>
+            </span>
+        </span>
+        un système qui permet 
+        <span class="question" id="q23">
+            <span class="options">
+                <span class="option" data-correct="false">la démocratie directe</span>
+                <span class="option" data-correct="true">la représentation</span>
+                <span class="option" data-correct="false">le suffrage universel</span>
+                <span class="option" data-correct="false">le suffrage censitaire</span>
+            </span>
+        </span>.
+    </p>
+ 
+    <div id="score">Score: 0 / 23</div>
+    <button id="reset">Réinitialiser le quiz</button>
+
+    <p style="text-align: center; margin-top: 30px; font-style: italic; color: #555;">
+        Source: Karl-Heinz Eggensperger, page modifiée le 10 juin 2011
+    </p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let score = 0;
+            const totalQuestions = 23;
+            const scoreDisplay = document.getElementById('score');
+            const resetButton = document.getElementById('reset');
+            
+            // Add click event listener to all options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    checkAnswer(this);
+                });
+            });
+            
+            // Reset quiz
+            resetButton.addEventListener('click', function() {
+                resetQuiz();
+            });
+            
+            // Function to check if the selected answer is correct
+            function checkAnswer(selectedOption) {
+                const questionContainer = selectedOption.closest('.question');
+                const options = questionContainer.querySelectorAll('.option');
+                
+                // Mark the question container as answered to prevent multiple clicks
+                questionContainer.classList.add('answered');
+                
+                const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+                
+                // Update the score
+                if (isCorrect) {
+                    score++;
+                    scoreDisplay.textContent = `Score: ${score} / ${totalQuestions}`;
+                }
+                
+                // Apply appropriate styling to all options in this question
+                options.forEach(option => {
+                    const optionIsCorrect = option.getAttribute('data-correct') === 'true';
+                    
+                    if (optionIsCorrect) {
+                        option.classList.add('correct');
+                    } else if (option === selectedOption && !isCorrect) {
+                        option.classList.add('incorrect');
+                    }
+                });
+            }
+            
+            // Function to reset the quiz
+            function resetQuiz() {
+                score = 0;
+                scoreDisplay.textContent = `Score: ${score} / ${totalQuestions}`;
+                
+                const questions = document.querySelectorAll('.question');
+                questions.forEach(question => {
+                    question.classList.remove('answered');
+                    
+                    const options = question.querySelectorAll('.option');
+                    options.forEach(option => {
+                        option.classList.remove('correct', 'incorrect');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

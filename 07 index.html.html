@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0;" />
+  <title>homepage6</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .column {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .nav-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #4a5568;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-title:hover {
+      color: #667eea;
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+      font-size: 0.8rem;
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .dropdown-content.active {
+      max-height: 400px;
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: 0.7rem 0;
+      color: #666;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      color: #667eea;
+      padding-left: 0.5rem;
+      background-color: #f8f9ff;
+    }
+
+    .dropdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .button-container {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-button {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      min-width: 120px;
+    }
+
+    .nav-button.primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .nav-button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .nav-button.secondary {
+      background: #f7fafc;
+      color: #4a5568;
+      border: 2px solid #e2e8f0;
+    }
+
+    .nav-button.secondary:hover {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+    }
+
+    /* Neue Styles für Registerkarten */
+    .tab-container {
+      margin-bottom: 1rem;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 1rem;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 0.7rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: #666;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab:hover {
+      color: #667eea;
+      background-color: #f8f9ff;
+    }
+
+    .tab.active {
+      color: #667eea;
+      border-bottom-color: #667eea;
+      background-color: #f8f9ff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-item {
+      display: block;
+      padding: 0.6rem 0;
+      color: #666;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .tab-item:hover {
+      color: #667eea;
+      padding-left: 0.5rem;
+      background-color: #f8f9ff;
+    }
+
+    .tab-item:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .button-container {
+        flex-direction: column;
+      }
+
+      .nav-button {
+        min-width: auto;
+      }
+
+      .tabs {
+        flex-direction: column;
+      }
+
+      .tab {
+        text-align: left;
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Sprachen bauen Brücken</h1>
+  <h2>Dr. Karl-Heinz Eggensperger</h2>
+</div>
+
+<main>
+  <div class="content">
+    <!-- Erste Spalte: Studienbezogenes Fremdsprachenlernen -->
+    <div class="column">
+      <div class="nav-title" onclick="toggleDropdown('dropdown1')">
+        Studienbezogenes Fremdsprachenlernen
+        <span class="dropdown-arrow" id="arrow1">▼</span>
+      </div>
+      <div class="dropdown-content" id="dropdown1">
+        <a href="#" class="dropdown-item">Allgemeine Sprachkurse</a>
+        <a href="#" class="dropdown-item">Fachspezifische Terminologie</a>
+        <a href="#" class="dropdown-item">Akademisches Schreiben</a>
+        <a href="#" class="dropdown-item">Präsentationstechniken</a>
+        <a href="#" class="dropdown-item">Prüfungsvorbereitung</a>
+      </div>
+      <div class="button-container">
+        <a href="#" class="nav-button primary">Kursangebot</a>
+        <a href="#" class="nav-button secondary">Anmeldung</a>
+      </div>
+    </div>
+
+    <!-- Zweite Spalte: Fachsprachen lernen im Studiengang Deutsches und Französisches Recht -->
+    <div class="column">
+      <div class="nav-title">
+        Fachsprachen lernen im Studiengang Deutsches und Französisches Recht
+      </div>
+      
+      <div class="button-container">
+        <a href="#" class="nav-button primary">Préparation linguistique</a>
+      </div>
+      
+      <!-- Neue Registerkarten-Navigation -->
+      <div class="tab-container">
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('tab1', this)">Stage de pré-rentrée</button>
+          <button class="tab" onclick="showTab('tab2', this)">l'Introduction au droit</button>
+          <button class="tab" onclick="showTab('tab3', this)">Droit constitutionnel</button>
+        </div>
+        
+        <!-- Tab 1: Stage de pré-rentrée -->
+        <div class="tab-content active" id="tab1">
+          <a href="#" class="tab-item">Brückenkurs Übersicht</a>
+          <a href="#" class="tab-item">Sprachliche Vorbereitung</a>
+          <a href="#" class="tab-item">Rechtsterminologie Grundlagen</a>
+          <a href="#" class="tab-item">Juristische Methodenlehre</a>
+          <a href="#" class="tab-item">Anmeldung Brückenkurs</a>
+        </div>
+        
+        <!-- Tab 2: l'Introduction au droit -->
+        <div class="tab-content" id="tab2">
+          <a href="#" class="tab-item">Einführung ins französische Recht</a>
+          <a href="#" class="tab-item">Rechtsquellen</a>
+          <a href="#" class="tab-item">Gerichtssystem</a>
+          <a href="#" class="tab-item">Juristische Personen</a>
+          <a href="#" class="tab-item">Klausurenvorbereitung</a>
+        </div>
+        
+        <!-- Tab 3: Droit constitutionnel -->
+        <div class="tab-content" id="tab3">
+          <a href="#" class="tab-item">Verfassungsrecht Grundlagen</a>
+          <a href="#" class="tab-item">Staatsorganisation</a>
+          <a href="#" class="tab-item">Grundrechte</a>
+          <a href="#" class="tab-item">Verfassungsgerichtsbarkeit</a>
+          <a href="#" class="tab-item">Seminararbeiten</a>
+        </div>
+      </div>
+      
+      <!-- Bestehende Dropdown-Inhalte -->
+      <div class="nav-title" onclick="toggleDropdown('dropdown2')" style="margin-top: 1.5rem;">
+        Weitere Rechtsfächer
+        <span class="dropdown-arrow" id="arrow2">▼</span>
+      </div>
+      <div class="dropdown-content" id="dropdown2">
+        <a href="#" class="dropdown-item">Droit administratif</a>
+        <a href="#" class="dropdown-item">Droit de la famille</a>
+        <a href="#" class="dropdown-item">Droit des obligations</a>
+        <a href="#" class="dropdown-item">Droit des biens</a>
+      </div>
+    </div>
+
+    <!-- Dritte Spalte: Fremdsprachenunterricht -->
+    <div class="column">
+      <div class="nav-title" onclick="toggleDropdown('dropdown3')">
+        Fremdsprachenunterricht
+        <span class="dropdown-arrow" id="arrow3">▼</span>
+      </div>
+      <div class="dropdown-content" id="dropdown3">
+        <a href="#" class="dropdown-item">Englisch</a>
+        <a href="#" class="dropdown-item">Französisch</a>
+        <a href="#" class="dropdown-item">Spanisch</a>
+        <a href="#" class="dropdown-item">Italienisch</a>
+        <a href="#" class="dropdown-item">Weitere Sprachen</a>
+      </div>
+      <div class="button-container">
+        <a href="#" class="nav-button primary">Sprachen lernen</a>
+        <a href="#" class="nav-button secondary">Einstufungstest</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+// Dropdown-Funktionalität
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  const arrow = document.getElementById(dropdownId.replace('dropdown', 'arrow'));
+  
+  // Alle anderen Dropdowns schließen
+  const allDropdowns = document.querySelectorAll('.dropdown-content');
+  const allArrows = document.querySelectorAll('.dropdown-arrow');
+  
+  allDropdowns.forEach((item, index) => {
+    if (item.id !== dropdownId) {
+      item.classList.remove('active');
+      allArrows[index].style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  // Aktuelles Dropdown umschalten
+  if (dropdown.classList.contains('active')) {
+    dropdown.classList.remove('active');
+    arrow.style.transform = 'rotate(0deg)';
+  } else {
+    dropdown.classList.add('active');
+    arrow.style.transform = 'rotate(180deg)';
+  }
+}
+
+// Tab-Funktionalität
+function showTab(tabId, tabButton) {
+  // Alle Tab-Inhalte ausblenden
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabContents.forEach(content => {
+    content.classList.remove('active');
+  });
+  
+  // Alle Tab-Buttons deaktivieren
+  const tabButtons = document.querySelectorAll('.tab');
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
+  });
+  
+  // Gewählten Tab anzeigen und Button aktivieren
+  document.getElementById(tabId).classList.add('active');
+  tabButton.classList.add('active');
+}
+
+// Dropdown schließen beim Klick außerhalb
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.column')) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    const arrows = document.querySelectorAll('.dropdown-arrow');
+    
+    dropdowns.forEach((dropdown, index) => {
+      dropdown.classList.remove('active');
+      arrows[index].style.transform = 'rotate(0deg)';
+    });
+  }
+});
+</script>
+
+</body>
+</html>
