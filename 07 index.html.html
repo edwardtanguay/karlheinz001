@@ -448,6 +448,34 @@
                class="nav-button secondary">Einstufungstest</a>
           </div>
         </div>
+
+
+        <div class="column"
+             id="column4"
+             style="display:none;">
+          <div class="nav-title"
+               onclick="toggleDropdown('dropdown3')">
+            Fourth Column
+            <span class="dropdown-arrow"
+                  id="arrow3">▼</span>
+          </div>
+          <p>This is the content of the fourth column.</p>
+        </div>
+
+
+        <div class="column"
+             id="column5"
+             style="display:none;">
+          <div class="nav-title"
+               onclick="toggleDropdown('dropdown3')">
+            Fifth Column
+            <span class="dropdown-arrow"
+                  id="arrow3">▼</span>
+          </div>
+          <p>This is the content of the fifth column.</p>
+        </div>
+
+
       </div>
       <button class="nav-arrow right"
               onclick="shiftColumn(1)">&#8594;</button>
@@ -515,7 +543,7 @@
 
     // Column navigation logic
     let currentColumn = 1;
-    const totalColumns = 3;
+    const totalColumns = 5;
 
     function updateColumnDisplay() {
       for (let i = 1; i <= totalColumns; i++) {
